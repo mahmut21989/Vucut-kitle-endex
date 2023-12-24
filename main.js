@@ -4,6 +4,7 @@ let user2 = document.getElementById("inp2");
 let paragraf = document.getElementById("product");
 let box1 = document.getElementById("rd1");
 let box2 = document.getElementById("rd2");
+const healthyFoods = document.getElementsByClassName("healthyEating")
 
 function btn1() {
 
@@ -43,18 +44,31 @@ function btn1() {
         conclusion.innerHTML = "Düşük kilolu"
         conclusion.style.color = "#8a2be2"
         conclusion.style.fontWeight="bold"
+        
         const unhealthyFoodSections = document.querySelectorAll(".unhealthyFood");
+       
         for (const section of unhealthyFoodSections) {
             section.style.display = "none";
         }
+        for (const section of healthyFoods) {
+            section.style.display = "block";
+            console.log(section,"Uğur hocam")
+        }
+       
 
     } else if (roundedNumber < currentWeightGroups.normal) {
         conclusion.innerHTML = "Normal kilolu" 
         conclusion.style.color = "blue"
         conclusion.style.fontWeight="bold"
+        
         const unhealthyFoodSections = document.querySelectorAll(".unhealthyFood");
         for (const section of unhealthyFoodSections) {
             section.style.display = "none";
+        }
+        const unhealthyFoodWeak = document.querySelectorAll(".healthyEating");
+        for (const section of unhealthyFoodWeak) {
+            section.style.display = "block";
+        
         }
     
     } else if (roundedNumber < currentWeightGroups.overweight) {
@@ -65,6 +79,10 @@ function btn1() {
         for (const section of unhealthyFoodSections) {
             section.style.display = "block";
         }
+        const unhealthyFoodWeak = document.querySelectorAll(".healthyEating");
+        for (const section of unhealthyFoodWeak) {
+            section.style.display = "none";
+        }
 
     } else if (roundedNumber < currentWeightGroups.obese) {
         conclusion.innerHTML = "Obez Olmuşsun Yeme Artık "
@@ -72,6 +90,10 @@ function btn1() {
         const unhealthyFoodSections = document.querySelectorAll(".unhealthyFood");
         for (const section of unhealthyFoodSections) {
             section.style.display = "block";
+        }
+        const unhealthyFoodWeak = document.querySelectorAll(".healthyEating");
+        for (const section of unhealthyFoodWeak) {
+            section.style.display = "none";
         }
 
     } else {
@@ -82,16 +104,25 @@ function btn1() {
         for (const section of unhealthyFoodSections) {
             section.style.display = "block";
         }
+        const unhealthyFoodWeak = document.querySelectorAll(".healthyEating");
+        for (const section of unhealthyFoodWeak) {
+            section.style.display = "none";
+        }
     }
-
-
+    
 
 }
 
 function female() {
-    // document.getElementsByTagName("body")[0].style.backgroundColor="pink" 
-    // user1.style="background-color:transparent;border:none;border-bottom:1px solid #000;outline:0"
+    document.getElementsByClassName("veribles")[0].style.backgroundColor="pink" 
+    /* user1.style="background-color:transparent;
+    border:none;border-bottom:1px solid #000;outline:0"  bu kod inputun valuesini rengini değişitiri*/
+    
 }
+document.addEventListener("DOMContentLoaded", function() {
+    female();
+  });
+
 user1.onfocus = function (a) {
     console.log(a)
     a.target.setAttribute("placeholder", "örn: 175")
@@ -103,7 +134,7 @@ user2.onfocus = function (a) {
     // a.target.style.backgroundColor="#000"
 }
 function male() {
-    // document.getElementsByTagName("body")[0].style.backgroundColor="darkblue" 
+    document.getElementsByClassName("veribles")[0].style.backgroundColor="lightsteelblue" 
 }
 
 

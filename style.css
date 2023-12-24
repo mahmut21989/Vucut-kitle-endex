@@ -234,6 +234,8 @@ body {
   }
   .unhealthyFood{
     display: none;
-   
   }
-
+  .healthyEating{
+    display: none;
+  }
+  

@@ -28,7 +28,7 @@ h1{
 /* button css */
 
 body {
-    background-color: beige;
+  background-image: linear-gradient(to bottom right, #17091a, #0c3239);
   }
   h1 {
     position: relative;

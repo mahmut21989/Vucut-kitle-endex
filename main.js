@@ -52,7 +52,6 @@ function btn1() {
         }
         for (const section of healthyFoods) {
             section.style.display = "block";
-            console.log(section,"Uğur hocam")
         }
        
 
